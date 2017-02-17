@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+  target 'UpChallenge' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for UpChallenge
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'SnapKit', '~> 3.0.2'
+  pod 'Alamofire', '~> 4.2.0'
+  pod 'SwiftyJSON', '~> 3.1.3'
+  pod 'RealmSwift', '~> 2.1.2'
+  pod 'FontAwesome.swift', '~> 1.0.0'
+  
+  target 'UpChallengeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'UpChallengeUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
