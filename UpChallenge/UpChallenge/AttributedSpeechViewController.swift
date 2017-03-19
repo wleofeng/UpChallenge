@@ -14,13 +14,15 @@ class AttributedSpeechViewController: UIViewController {
     @IBOutlet private weak var label: UILabel!
     
     private let speech = AVSpeechSynthesizer()
-    private let baseStr = "iOS 10 Sampler is a collection of code examples for new APIs of iOS 10."
+//    private let baseStr = "iOS 10 Sampler is a collection of code examples for new APIs of iOS 10."
+//    private let baseStr = "Sally up"
+    private let baseStr = "Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground. Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground. Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground. Bring Sally up and bring Sally down.Lift and squat, gotta tear the ground."
     private var attributedStr: NSMutableAttributedString!
     private var utterance: AVSpeechUtterance!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         attributedStr = NSMutableAttributedString(string: baseStr)
         let rangeAll = NSMakeRange(0, baseStr.characters.count)
         let rangeBold = NSString(string: baseStr).range(of: "iOS")
@@ -29,6 +31,17 @@ class AttributedSpeechViewController: UIViewController {
         attributedStr.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 20)], range: rangeBold)
         
         updateUtterance(attributed: false)
+        
+        // Voice
+        var voiceToUse: AVSpeechSynthesisVoice?
+        for voice in AVSpeechSynthesisVoice.speechVoices() {
+            if #available(iOS 9.0, *) {
+                if voice.name == "Karen" {
+                    voiceToUse = voice
+                }
+            }
+        }
+        utterance.voice = voiceToUse
     }
 
     override func didReceiveMemoryWarning() {
