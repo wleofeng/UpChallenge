@@ -10,13 +10,14 @@ import UIKit
 import AVFoundation
 
 class AttributedSpeechViewController: UIViewController {
-
+    
     @IBOutlet private weak var label: UILabel!
     
     private let speech = AVSpeechSynthesizer()
-//    private let baseStr = "iOS 10 Sampler is a collection of code examples for new APIs of iOS 10."
-//    private let baseStr = "Sally up"
+    //    private let baseStr = "iOS 10 Sampler is a collection of code examples for new APIs of iOS 10."
+    //    private let baseStr = "Sally up"
     private let baseStr = "Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground. Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground. Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground. Bring Sally up and bring Sally down.Lift and squat, gotta tear the ground."
+    //    private let baseStr = "Push Up, down, up, down, up, down"
     private var attributedStr: NSMutableAttributedString!
     private var utterance: AVSpeechUtterance!
     
@@ -43,7 +44,7 @@ class AttributedSpeechViewController: UIViewController {
         }
         utterance.voice = voiceToUse
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -54,6 +55,8 @@ class AttributedSpeechViewController: UIViewController {
             label.attributedText = attributedStr
         } else {
             utterance = AVSpeechUtterance(string: baseStr)
+            utterance.rate = 0.3  // Range 0.0 - 1.0, default is 0.5
+            utterance.pitchMultiplier = 1.5 // [0.5 - 2] Default = 1
             label.text = baseStr
         }
     }
@@ -68,9 +71,9 @@ class AttributedSpeechViewController: UIViewController {
         }
         speech.speak(utterance)
     }
-
+    
     @IBAction func switchChanged(sender: UISwitch) {
         updateUtterance(attributed: sender.isOn)
     }
-
+    
 }
