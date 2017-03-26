@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dby-Pq-RFa">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dby-Pq-RFa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +13,7 @@
         <!--Attributed Speech View Controller-->
         <scene sceneID="IeV-MH-X3j">
             <objects>
-                <viewController id="dby-Pq-RFa" customClass="AttributedSpeechViewController" customModule="iOS_10_Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dby-Pq-RFa" customClass="AttributedSpeechViewController" customModule="UpChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wC8-le-hn0"/>
                         <viewControllerLayoutGuide type="bottom" id="u7c-Ny-OEl"/>
@@ -20,6 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAC-8x-azi">
+                                <rect key="frame" x="155.5" y="331.5" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="6JG-5f-val"/>
                                     <constraint firstAttribute="height" constant="64" id="bkP-lc-cu3"/>
@@ -30,21 +34,41 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="k5U-VP-65y">
+                                <rect key="frame" x="163" y="268.5" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchChangedWithSender:" destination="dby-Pq-RFa" eventType="valueChanged" id="CRE-Qp-96i"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nh-pd-mxb">
+                                <rect key="frame" x="16" y="241" width="343" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UU-oL-wW7">
+                                <rect key="frame" x="166" y="426" width="42" height="30"/>
+                                <state key="normal" title="pause"/>
+                                <connections>
+                                    <action selector="pauseButtonTapped:" destination="dby-Pq-RFa" eventType="touchUpInside" id="mTg-Qq-heX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yr-PT-jc1">
+                                <rect key="frame" x="170" y="486" width="35" height="30"/>
+                                <state key="normal" title="reset"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="dby-Pq-RFa" eventType="touchUpInside" id="lt5-3N-S0D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6yr-PT-jc1" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="1Rw-Xm-hCK"/>
+                            <constraint firstItem="6UU-oL-wW7" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="2bO-P9-Qvu"/>
                             <constraint firstItem="4Nh-pd-mxb" firstAttribute="leading" secondItem="LVa-UG-knz" secondAttribute="leadingMargin" id="4C1-xy-VJQ"/>
+                            <constraint firstItem="6yr-PT-jc1" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="466" id="5K9-m4-OZi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Nh-pd-mxb" secondAttribute="trailing" id="7IG-re-if4"/>
                             <constraint firstItem="GAC-8x-azi" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="RLb-Zj-F9Y"/>
+                            <constraint firstItem="6UU-oL-wW7" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="406" id="Zso-l7-3Xx"/>
                             <constraint firstItem="k5U-VP-65y" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="dTk-GO-fWP"/>
                             <constraint firstItem="k5U-VP-65y" firstAttribute="top" secondItem="4Nh-pd-mxb" secondAttribute="bottom" constant="8" id="fMG-5e-vXl"/>
                             <constraint firstItem="GAC-8x-azi" firstAttribute="top" secondItem="k5U-VP-65y" secondAttribute="bottom" constant="32" id="rZ6-QZ-rsu"/>

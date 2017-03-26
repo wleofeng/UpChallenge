@@ -66,6 +66,7 @@ class AttributedSpeechViewController: UIViewController, VoiceTimerDelegate {
         
         setUtterance(with: lyric)
         speech.speak(utterance)
+    
     }
     
     func setUtterance(with text: String) {
@@ -78,13 +79,23 @@ class AttributedSpeechViewController: UIViewController, VoiceTimerDelegate {
     // MARK: - Actions
     
     @IBAction func speechBtnTapped(sender: UIButton) {
-        if speech.isSpeaking {
-            print("already speaking...")
-            return
-        }
-//        speech.speak(utterance)
-        
         voiceTimer.startTimer()
+        
+        if speech.isSpeaking { // handle the speech pause case
+            speech.continueSpeaking()
+        }
+    }
+    
+    @IBAction func pauseButtonTapped(_ sender: Any) {
+        voiceTimer.pauseTimer()
+        
+        speech.pauseSpeaking(at: .immediate)
+    }
+    
+    @IBAction func resetButtonTapped(_ sender: Any) {
+        voiceTimer.resetTimer()
+        
+        speech.stopSpeaking(at: .immediate)
     }
     
     @IBAction func switchChanged(sender: UISwitch) {
