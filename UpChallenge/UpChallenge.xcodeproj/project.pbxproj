@@ -15,6 +15,7 @@
 		4C2ED59B1E570DDE0033DC36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2ED5991E570DDE0033DC36 /* LaunchScreen.storyboard */; };
 		4C2ED5A61E570DDE0033DC36 /* UpChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ED5A51E570DDE0033DC36 /* UpChallengeTests.swift */; };
 		4C2ED5B11E570DDE0033DC36 /* UpChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ED5B01E570DDE0033DC36 /* UpChallengeUITests.swift */; };
+		4C8F8F9C1E8815E6005B0AB8 /* VoiceTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8F8F9B1E8815E6005B0AB8 /* VoiceTimer.swift */; };
 		4CDA49221E7F3568005DC33C /* AttributedSpeech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDA49201E7F3568005DC33C /* AttributedSpeech.storyboard */; };
 		4CDA49231E7F3568005DC33C /* AttributedSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDA49211E7F3568005DC33C /* AttributedSpeechViewController.swift */; };
 		68AE16174081F86F6D454605 /* Pods_UpChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB348BAFBEF550D4D107A6DC /* Pods_UpChallengeTests.framework */; };
@@ -54,6 +55,7 @@
 		4C2ED5AC1E570DDE0033DC36 /* UpChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2ED5B01E570DDE0033DC36 /* UpChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpChallengeUITests.swift; sourceTree = "<group>"; };
 		4C2ED5B21E570DDE0033DC36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8F8F9B1E8815E6005B0AB8 /* VoiceTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceTimer.swift; sourceTree = "<group>"; };
 		4CDA49201E7F3568005DC33C /* AttributedSpeech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AttributedSpeech.storyboard; sourceTree = "<group>"; };
 		4CDA49211E7F3568005DC33C /* AttributedSpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedSpeechViewController.swift; sourceTree = "<group>"; };
 		4E5A0D3C5D0274A869528CF1 /* Pods-UpChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpChallengeTests/Pods-UpChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				4C2ED5921E570DDE0033DC36 /* ViewController.swift */,
 				4CDA49201E7F3568005DC33C /* AttributedSpeech.storyboard */,
 				4CDA49211E7F3568005DC33C /* AttributedSpeechViewController.swift */,
+				4C8F8F9B1E8815E6005B0AB8 /* VoiceTimer.swift */,
 				4C2ED5941E570DDE0033DC36 /* Main.storyboard */,
 				4C2ED5971E570DDE0033DC36 /* Assets.xcassets */,
 				4C2ED5991E570DDE0033DC36 /* LaunchScreen.storyboard */,
@@ -459,6 +462,7 @@
 				4CDA49231E7F3568005DC33C /* AttributedSpeechViewController.swift in Sources */,
 				4C2ED5931E570DDE0033DC36 /* ViewController.swift in Sources */,
 				4C2ED5911E570DDE0033DC36 /* AppDelegate.swift in Sources */,
+				4C8F8F9C1E8815E6005B0AB8 /* VoiceTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

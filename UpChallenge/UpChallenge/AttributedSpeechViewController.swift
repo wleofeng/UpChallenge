@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class AttributedSpeechViewController: UIViewController {
+class AttributedSpeechViewController: UIViewController, VoiceTimerDelegate {
     
     @IBOutlet private weak var label: UILabel!
     
@@ -20,6 +20,8 @@ class AttributedSpeechViewController: UIViewController {
     //    private let baseStr = "Push Up, down, up, down, up, down"
     private var attributedStr: NSMutableAttributedString!
     private var utterance: AVSpeechUtterance!
+    
+    var voiceTimer = VoiceTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +45,8 @@ class AttributedSpeechViewController: UIViewController {
             }
         }
         utterance.voice = voiceToUse
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
+        voiceTimer.delegate = self
     }
     
     private func updateUtterance(attributed: Bool) {
@@ -61,6 +61,19 @@ class AttributedSpeechViewController: UIViewController {
         }
     }
     
+    func timeToSpeak(lyric: String) {
+        print("speaking" + lyric)
+        
+        setUtterance(with: lyric)
+        speech.speak(utterance)
+    }
+    
+    func setUtterance(with text: String) {
+        utterance = AVSpeechUtterance(string: text)
+        utterance.rate = 0.3  // Range 0.0 - 1.0, default is 0.5
+        utterance.pitchMultiplier = 1.5 // [0.5 - 2] Default = 1
+    }
+    
     // =========================================================================
     // MARK: - Actions
     
@@ -69,7 +82,9 @@ class AttributedSpeechViewController: UIViewController {
             print("already speaking...")
             return
         }
-        speech.speak(utterance)
+//        speech.speak(utterance)
+        
+        voiceTimer.startTimer()
     }
     
     @IBAction func switchChanged(sender: UISwitch) {
