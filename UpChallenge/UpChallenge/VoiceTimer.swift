@@ -13,7 +13,7 @@ protocol VoiceTimerDelegate: class {
     func timeToSpeak(voiceTimer: VoiceTimer)
 }
 
-class VoiceTimer: NSObject {
+class VoiceTimer {
     
     var lyrics: [[Int: String]] = [
         [1: "Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground."],
