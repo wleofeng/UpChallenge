@@ -10,7 +10,7 @@ import Foundation
 
 protocol VoiceTimerDelegate: class {
     
-    func timeToSpeak(lyric: String)
+    func timeToSpeak(voiceTimer: VoiceTimer)
 }
 
 class VoiceTimer: NSObject {
@@ -19,10 +19,9 @@ class VoiceTimer: NSObject {
         [1: "Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground."],
         [5: "2 Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground."]
     ]
-    
-    var timer: Timer?
-    var seconds: Int = 0
-    var nextLyric: String = ""
+    fileprivate var timer: Timer?
+    fileprivate var seconds: Int = 0
+    public fileprivate(set) var lyric: String = ""
     
     weak var delegate: VoiceTimerDelegate?
     
@@ -46,18 +45,19 @@ class VoiceTimer: NSObject {
     func pauseTimer() {
         stopTimer()
     }
+}
+
+// MARK: Internal Methods
+extension VoiceTimer {
     
-    
-    // Internal Mehtods
-    
-    private func stopTimer() {
+    fileprivate func stopTimer() {
         if timer != nil {
             timer?.invalidate()
             timer = nil
         }
     }
     
-    @objc private func update() {
+    @objc fileprivate func update() {
         seconds += 1
         
         print(seconds)
@@ -72,22 +72,19 @@ class VoiceTimer: NSObject {
             }
             
             if let val = lyric[seconds] {
-                delegate?.timeToSpeak(lyric: val)
+                self.lyric = val
+                delegate?.timeToSpeak(voiceTimer: self)
                 lyrics.removeFirst()
             }
         }
         
     }
     
-    private func getNextLyric() -> [Int: String]? {
+    fileprivate func getNextLyric() -> [Int: String]? {
         if lyrics.count > 0 {
             return lyrics[0]
         }
         
         return nil
-    }
-    
-    private func initializeLyrics() {
-        
     }
 }
