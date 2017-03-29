@@ -15,7 +15,7 @@ class SpeechViewController: UIViewController {
     
     fileprivate let speech: AVSpeechSynthesizer = AVSpeechSynthesizer()
     fileprivate var utterance: AVSpeechUtterance = AVSpeechUtterance()
-    fileprivate var voiceTimer: VoiceTimer = VoiceTimer()
+    fileprivate var voiceTimer: VoiceTimer!
 }
 
 // MARK: View cycle
@@ -36,13 +36,9 @@ extension SpeechViewController {
         
         utterance.voice = voiceToUse
         
+//        var lyricParser = LyricParser(fileName: "lyrics")
+        voiceTimer = VoiceTimer(fileName: "lyrics")
         voiceTimer.delegate = self
-        
-        
-        // test lyrics parser
-        var lyricParser = LyricParser(fileName: "lyrics")
-        
-        
     }
 }
 

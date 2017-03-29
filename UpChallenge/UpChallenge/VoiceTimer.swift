@@ -14,17 +14,19 @@ protocol VoiceTimerDelegate: class {
 }
 
 class VoiceTimer {
-    
-    var lyrics: [[Int: String]] = [
-        [1: "Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground."],
-        [5: "2 Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground."]
-    ]
+
+    fileprivate var lyrics: [Lyric] = []
     fileprivate var timer: Timer?
     fileprivate var seconds: Int = 0
     public fileprivate(set) var lyric: String = ""
     
     weak var delegate: VoiceTimerDelegate?
     
+    
+    init(fileName: String) {
+        let parser = LyricParser(fileName: fileName)
+        self.lyrics = parser.lyrics
+    }
     
     func startTimer() {
         if timer == nil {
@@ -62,25 +64,23 @@ extension VoiceTimer {
         
         print(seconds)
         
-        if let lyric: [Int: String] = getNextLyric() {
+        if let lyric = getNextLyric() {
             // No need to continue if the timer already went pass the lyric trigger time
-            let secondsInLyric = Array(lyric.keys)[0]
+            let secondsInLyric = lyric.time
             if secondsInLyric < seconds {
                 lyrics.removeFirst()
                 
                 return
             }
-            
-            if let val = lyric[seconds] {
-                self.lyric = val
-                delegate?.timeToSpeak(voiceTimer: self)
-                lyrics.removeFirst()
-            }
+        
+            self.lyric = lyric.lyric
+            delegate?.timeToSpeak(voiceTimer: self)
+            lyrics.removeFirst()
         }
         
     }
     
-    fileprivate func getNextLyric() -> [Int: String]? {
+    fileprivate func getNextLyric() -> Lyric? {
         if lyrics.count > 0 {
             return lyrics[0]
         }
