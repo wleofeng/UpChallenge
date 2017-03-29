@@ -36,8 +36,8 @@ extension SpeechViewController {
         
         utterance.voice = voiceToUse
         
-//        var lyricParser = LyricParser(fileName: "lyrics")
-        voiceTimer = VoiceTimer(fileName: "lyrics")
+        // Voice Timer
+        voiceTimer = VoiceTimer(fileName: Constant.FileName)
         voiceTimer.delegate = self
     }
 }

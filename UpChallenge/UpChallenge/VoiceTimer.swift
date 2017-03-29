@@ -15,16 +15,22 @@ protocol VoiceTimerDelegate: class {
 
 class VoiceTimer {
 
+    public fileprivate(set) var lyric: String = ""
+    
     fileprivate var lyrics: [Lyric] = []
     fileprivate var timer: Timer?
     fileprivate var seconds: Int = 0
-    public fileprivate(set) var lyric: String = ""
-    
+
     weak var delegate: VoiceTimerDelegate?
     
     
     init(fileName: String) {
         let parser = LyricParser(fileName: fileName)
+        self.lyrics = parser.lyrics
+    }
+    
+    init(data: Data) {
+        let parser = LyricParser(data: data)
         self.lyrics = parser.lyrics
     }
     

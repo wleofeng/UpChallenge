@@ -10,23 +10,37 @@ import Foundation
 import SwiftyJSON
 
 class LyricParser {
-    var fileName: String = "lyrics" // default file name 
-    var name: String = ""
+    
+    var fileName: String?
+    
+    var songName: String = ""
     var lyrics: [Lyric] = []
+    
     
     init(fileName: String) {
         self.fileName = fileName
         
         if let json = readFile(name: fileName) {
-            if let name = json["name"].string {
-                self.name = name
-            }
-            
-            let lyrics: [JSON] = json["lyrics"].arrayValue
-            for lyric in lyrics {
-                if let time = lyric["time"].int, let lyric = lyric["lyric"].string {
-                    self.lyrics.append(Lyric(time: time, lyric: lyric))
-                }
+            commonInit(json: json)
+        }
+    }
+    
+    init(data: Data) {
+        let json = JSON(data: data)
+        if json != JSON.null {
+            commonInit(json: json)
+        }
+    }
+    
+    fileprivate func commonInit(json: JSON) {
+        if let name = json["name"].string {
+            self.songName = name
+        }
+        
+        let lyrics: [JSON] = json["lyrics"].arrayValue
+        for lyric in lyrics {
+            if let time = lyric["time"].int, let lyric = lyric["lyric"].string {
+                self.lyrics.append(Lyric(time: time, lyric: lyric))
             }
         }
     }
