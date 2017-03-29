@@ -37,6 +37,12 @@ extension SpeechViewController {
         utterance.voice = voiceToUse
         
         voiceTimer.delegate = self
+        
+        
+        // test lyrics parser
+        var lyricParser = LyricParser(fileName: "lyrics")
+        
+        
     }
 }
 

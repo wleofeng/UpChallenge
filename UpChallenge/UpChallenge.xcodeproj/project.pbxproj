@@ -10,7 +10,7 @@
 		122DE9537F21A03D5C4F99CF /* Pods_UpChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69A9DF30E8384810E3C8C9 /* Pods_UpChallengeUITests.framework */; };
 		4C07EC331E89FB5400387229 /* LyricParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07EC321E89FB5400387229 /* LyricParser.swift */; };
 		4C07EC351E89FB6700387229 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07EC341E89FB6700387229 /* Config.swift */; };
-		4C07EC371E89FCB200387229 /* lyrics.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C07EC361E89FCB200387229 /* lyrics.txt */; };
+		4C07EC371E89FCB200387229 /* lyrics.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C07EC361E89FCB200387229 /* lyrics.json */; };
 		4C2ED5911E570DDE0033DC36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ED5901E570DDE0033DC36 /* AppDelegate.swift */; };
 		4C2ED5961E570DDE0033DC36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2ED5941E570DDE0033DC36 /* Main.storyboard */; };
 		4C2ED5981E570DDE0033DC36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2ED5971E570DDE0033DC36 /* Assets.xcassets */; };
@@ -18,6 +18,7 @@
 		4C2ED5A61E570DDE0033DC36 /* UpChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ED5A51E570DDE0033DC36 /* UpChallengeTests.swift */; };
 		4C2ED5B11E570DDE0033DC36 /* UpChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ED5B01E570DDE0033DC36 /* UpChallengeUITests.swift */; };
 		4C8F8F9C1E8815E6005B0AB8 /* VoiceTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8F8F9B1E8815E6005B0AB8 /* VoiceTimer.swift */; };
+		4C9C63021E8B467900CE3C54 /* Lyric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C63011E8B467900CE3C54 /* Lyric.swift */; };
 		4CDA49221E7F3568005DC33C /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDA49201E7F3568005DC33C /* Speech.storyboard */; };
 		4CDA49231E7F3568005DC33C /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDA49211E7F3568005DC33C /* SpeechViewController.swift */; };
 		68AE16174081F86F6D454605 /* Pods_UpChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB348BAFBEF550D4D107A6DC /* Pods_UpChallengeTests.framework */; };
@@ -46,7 +47,7 @@
 		284A62B78D6BCFBB147DC39F /* Pods-UpChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpChallengeUITests/Pods-UpChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C07EC321E89FB5400387229 /* LyricParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricParser.swift; sourceTree = "<group>"; };
 		4C07EC341E89FB6700387229 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		4C07EC361E89FCB200387229 /* lyrics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lyrics.txt; sourceTree = "<group>"; };
+		4C07EC361E89FCB200387229 /* lyrics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lyrics.json; sourceTree = "<group>"; };
 		4C2ED58D1E570DDE0033DC36 /* UpChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2ED5901E570DDE0033DC36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C2ED5951E570DDE0033DC36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		4C2ED5B01E570DDE0033DC36 /* UpChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpChallengeUITests.swift; sourceTree = "<group>"; };
 		4C2ED5B21E570DDE0033DC36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C8F8F9B1E8815E6005B0AB8 /* VoiceTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceTimer.swift; sourceTree = "<group>"; };
+		4C9C63011E8B467900CE3C54 /* Lyric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lyric.swift; sourceTree = "<group>"; };
 		4CDA49201E7F3568005DC33C /* Speech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		4CDA49211E7F3568005DC33C /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		4E5A0D3C5D0274A869528CF1 /* Pods-UpChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpChallengeTests/Pods-UpChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,9 +144,10 @@
 				4CDA49211E7F3568005DC33C /* SpeechViewController.swift */,
 				4C8F8F9B1E8815E6005B0AB8 /* VoiceTimer.swift */,
 				4C07EC321E89FB5400387229 /* LyricParser.swift */,
+				4C9C63011E8B467900CE3C54 /* Lyric.swift */,
 				4C07EC341E89FB6700387229 /* Config.swift */,
 				4C2ED5941E570DDE0033DC36 /* Main.storyboard */,
-				4C07EC361E89FCB200387229 /* lyrics.txt */,
+				4C07EC361E89FCB200387229 /* lyrics.json */,
 				4C2ED5971E570DDE0033DC36 /* Assets.xcassets */,
 				4C2ED5991E570DDE0033DC36 /* LaunchScreen.storyboard */,
 				4C2ED59C1E570DDE0033DC36 /* Info.plist */,
@@ -302,7 +305,7 @@
 				4C2ED59B1E570DDE0033DC36 /* LaunchScreen.storyboard in Resources */,
 				4C2ED5981E570DDE0033DC36 /* Assets.xcassets in Resources */,
 				4CDA49221E7F3568005DC33C /* Speech.storyboard in Resources */,
-				4C07EC371E89FCB200387229 /* lyrics.txt in Resources */,
+				4C07EC371E89FCB200387229 /* lyrics.json in Resources */,
 				4C2ED5961E570DDE0033DC36 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +474,7 @@
 				4C07EC351E89FB6700387229 /* Config.swift in Sources */,
 				4C2ED5911E570DDE0033DC36 /* AppDelegate.swift in Sources */,
 				4C8F8F9C1E8815E6005B0AB8 /* VoiceTimer.swift in Sources */,
+				4C9C63021E8B467900CE3C54 /* Lyric.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
