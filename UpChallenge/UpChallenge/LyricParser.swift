@@ -13,11 +13,21 @@ class LyricParser {
     
     var fileName: String?
     
-    var songName: String = ""
-    var lyrics: [Lyric] = []
+    var songName: String
+    var lyrics: [Lyric]
     
+    init(songName: String, lyrics: [Lyric]) {
+        self.songName = songName
+        self.lyrics = lyrics
+    }
     
-    init(fileName: String) {
+    convenience init() {
+        self.init(songName: "", lyrics: [])
+    }
+    
+    convenience init(fileName: String) {
+        self.init()
+        
         self.fileName = fileName
         
         if let json = readFile(name: fileName) {
@@ -25,7 +35,9 @@ class LyricParser {
         }
     }
     
-    init(data: Data) {
+    convenience init(data: Data) {
+        self.init()
+        
         let json = JSON(data: data)
         if json != JSON.null {
             commonInit(json: json)

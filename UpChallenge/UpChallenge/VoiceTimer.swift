@@ -17,21 +17,30 @@ class VoiceTimer {
 
     public fileprivate(set) var lyric: String = ""
     
-    fileprivate var lyrics: [Lyric] = []
+    fileprivate var lyrics: [Lyric]
+    fileprivate var seconds: Int
     fileprivate var timer: Timer?
-    fileprivate var seconds: Int = 0
 
     weak var delegate: VoiceTimerDelegate?
+
     
-    
-    init(fileName: String) {
-        let parser = LyricParser(fileName: fileName)
-        self.lyrics = parser.lyrics
+    init(seconds: Int, lyrics: [Lyric]) {
+        self.seconds = seconds
+        self.lyrics = lyrics
     }
     
-    init(data: Data) {
+    convenience init() {
+        self.init(seconds: 0, lyrics: [])
+    }
+    
+    convenience init(fileName: String) {
+        let parser = LyricParser(fileName: fileName)
+        self.init(seconds: 0, lyrics: parser.lyrics)
+    }
+    
+    convenience init(data: Data) {
         let parser = LyricParser(data: data)
-        self.lyrics = parser.lyrics
+        self.init(seconds: 0, lyrics: parser.lyrics)
     }
     
     func startTimer() {
