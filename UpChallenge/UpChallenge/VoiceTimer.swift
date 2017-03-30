@@ -56,6 +56,7 @@ class VoiceTimer {
     
     func resetTimer() {
         seconds = 0
+        delegate?.timerDidUpdate(voiceTimer: self)
         
         stopTimer()
     }
