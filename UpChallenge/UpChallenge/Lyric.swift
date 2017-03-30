@@ -11,9 +11,11 @@ import Foundation
 class Lyric {
     var time: Int = 0
     var lyric: String = ""
+    // more config possible per lyric line
     
     init(time: Int, lyric: String) {
         self.time = time
         self.lyric = lyric
+        
     }
 }

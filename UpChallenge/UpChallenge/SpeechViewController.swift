@@ -11,7 +11,8 @@ import AVFoundation
 
 class SpeechViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var lyriclabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
     fileprivate let speech: AVSpeechSynthesizer = AVSpeechSynthesizer()
     fileprivate var utterance: AVSpeechUtterance = AVSpeechUtterance()
@@ -48,9 +49,14 @@ extension SpeechViewController: VoiceTimerDelegate {
     func timeToSpeak(voiceTimer: VoiceTimer) {
         print("speaking" + voiceTimer.lyric)
         
-        label.text = voiceTimer.lyric
+        lyriclabel.text = voiceTimer.lyric
         setUtterance(with: voiceTimer.lyric)
         speech.speak(utterance)
+    }
+    
+    func timerDidUpdate(voiceTimer: VoiceTimer) {
+        
+        timerLabel.text = formattedTime(seconds: voiceTimer.seconds)
     }
 }
 
@@ -81,6 +87,15 @@ extension SpeechViewController {
 
 // MARK: Helper
 extension SpeechViewController {
+    
+    func formattedTime(seconds: Int) -> String {
+        let hours = seconds / 3600
+        let minutes = (seconds - (hours * 3600)) / 60
+        let seconds = seconds - (hours * 3600) - (minutes * 60)
+        
+        // Doesn't really make sense to show timer, too long of a work out for now
+        return [String(minutes), ":", String(seconds)].joined(separator: " ")
+    }
     
     func setUtterance(with text: String) {
         utterance = AVSpeechUtterance(string: text)

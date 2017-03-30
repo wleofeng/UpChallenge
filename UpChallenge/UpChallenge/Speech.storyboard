@@ -22,7 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nh-pd-mxb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-Sv-N82" userLabel="Timer Label">
+                                <rect key="frame" x="151.5" y="132" width="72.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nh-pd-mxb" userLabel="Lyric Label">
                                 <rect key="frame" x="16" y="241" width="343" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -61,6 +67,8 @@
                             <constraint firstItem="4Nh-pd-mxb" firstAttribute="leading" secondItem="LVa-UG-knz" secondAttribute="leadingMargin" id="4C1-xy-VJQ"/>
                             <constraint firstItem="6yr-PT-jc1" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="466" id="5K9-m4-OZi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Nh-pd-mxb" secondAttribute="trailing" id="7IG-re-if4"/>
+                            <constraint firstItem="rSc-Sv-N82" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="7vg-GT-ISc"/>
+                            <constraint firstItem="rSc-Sv-N82" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="112" id="Ib8-KT-fbl"/>
                             <constraint firstItem="GAC-8x-azi" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="RLb-Zj-F9Y"/>
                             <constraint firstItem="6UU-oL-wW7" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="406" id="Zso-l7-3Xx"/>
                             <constraint firstItem="4Nh-pd-mxb" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="221" id="nsZ-Uw-Ljm"/>
@@ -69,7 +77,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="4Nh-pd-mxb" id="OAa-rR-m0O"/>
+                        <outlet property="lyriclabel" destination="4Nh-pd-mxb" id="BnK-a4-Msp"/>
+                        <outlet property="timerLabel" destination="rSc-Sv-N82" id="FhV-e3-Ijq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IU-sw-XAF" userLabel="First Responder" sceneMemberID="firstResponder"/>

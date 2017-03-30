@@ -11,14 +11,15 @@ import Foundation
 protocol VoiceTimerDelegate: class {
     
     func timeToSpeak(voiceTimer: VoiceTimer)
+    func timerDidUpdate(voiceTimer: VoiceTimer)
 }
 
 class VoiceTimer {
 
     public fileprivate(set) var lyric: String = ""
+    public fileprivate(set) var seconds: Int
     
     fileprivate var lyrics: [Lyric]
-    fileprivate var seconds: Int
     fileprivate var timer: Timer?
 
     weak var delegate: VoiceTimerDelegate?
@@ -76,8 +77,7 @@ extension VoiceTimer {
     
     @objc fileprivate func update() {
         seconds += 1
-        
-        print(seconds)
+        delegate?.timerDidUpdate(voiceTimer: self)
         
         if let lyric = getNextLyric() {
             // No need to continue if the timer already went pass the lyric trigger time
