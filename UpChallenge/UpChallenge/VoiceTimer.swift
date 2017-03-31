@@ -82,16 +82,18 @@ extension VoiceTimer {
         
         if let lyric = getNextLyric() {
             // No need to continue if the timer already went pass the lyric trigger time
-            let secondsInLyric = lyric.time
-            if secondsInLyric < seconds {
+            if lyric.time < seconds {
                 lyrics.removeFirst()
                 
                 return
             }
-        
-            self.lyric = lyric.lyric
-            delegate?.timeToSpeak(voiceTimer: self)
-            lyrics.removeFirst()
+            
+            // Time to speak - Timer time equals to the lyric time
+            if lyric.time == seconds {
+                self.lyric = lyric.lyric
+                delegate?.timeToSpeak(voiceTimer: self)
+                lyrics.removeFirst()
+            }
         }
         
     }
