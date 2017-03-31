@@ -83,6 +83,10 @@ extension VoiceTimer {
         if let lyric = getNextLyric() {
             // No need to continue if the timer already went pass the lyric trigger time
             if lyric.time < seconds {
+                /*
+                 Should I modify the lyric.time = seconds?
+                 This will force trigger a speech
+                 */
                 lyrics.removeFirst()
                 
                 return
