@@ -17,6 +17,7 @@ class SpeechViewController: UIViewController {
     fileprivate let speech: AVSpeechSynthesizer = AVSpeechSynthesizer()
     fileprivate var utterance: AVSpeechUtterance = AVSpeechUtterance()
     fileprivate var voiceTimer: VoiceTimer!
+    fileprivate var voice: AVSpeechSynthesisVoice?
 }
 
 // MARK: View cycle
@@ -25,18 +26,15 @@ extension SpeechViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Add voice changer
         var voiceToUse: AVSpeechSynthesisVoice?
         for voice in AVSpeechSynthesisVoice.speechVoices() {
-            print("voice : %@", voice.name )
             if #available(iOS 9.0, *) {
-                if voice.name == "Karen" {
+                if voice.name == "Daniel" {
                     voiceToUse = voice
                 }
             }
         }
-        
-        utterance.voice = voiceToUse
+        voice = voiceToUse ?? AVSpeechSynthesisVoice.speechVoices().first
         
         // Voice Timer
         voiceTimer = VoiceTimer(fileName: Constant.FileName)
@@ -106,14 +104,28 @@ extension SpeechViewController {
     
     func setUtterance(with text: String) {
         utterance = AVSpeechUtterance(string: text)
-        utterance.rate = 0.3  // Range 0.0 - 1.0, default is 0.5
-        utterance.pitchMultiplier = 1.5 // [0.5 - 2] Default = 1
+        utterance.voice = voice
+        //        utterance.rate = 0.3  // Range 0.0 - 1.0, default is 0.5
+        //        utterance.pitchMultiplier = 1.5 // [0.5 - 2] Default = 1
     }
 }
 
 // MARK: Segue handler
 extension SpeechViewController {
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? VoicesTableViewController {
+            viewController.voices = AVSpeechSynthesisVoice.speechVoices()
+            viewController.delegate = self
+        }
+    }
+}
+
+extension SpeechViewController: VoicesTableViewControllerDelegate {
+    
+    func didSelectVoice(voicesTableViewController: VoicesTableViewController) {
+        voice = voicesTableViewController.selectedVoice
         
+        speech.stopSpeaking(at: .immediate) // stop speaking in order to reset the voice
     }
 }
