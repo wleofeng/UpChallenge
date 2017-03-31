@@ -25,9 +25,10 @@ extension SpeechViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Voice
+        // TODO: Add voice changer
         var voiceToUse: AVSpeechSynthesisVoice?
         for voice in AVSpeechSynthesisVoice.speechVoices() {
+            print("voice : %@", voice.name )
             if #available(iOS 9.0, *) {
                 if voice.name == "Karen" {
                     voiceToUse = voice
@@ -40,6 +41,12 @@ extension SpeechViewController {
         // Voice Timer
         voiceTimer = VoiceTimer(fileName: Constant.FileName)
         voiceTimer.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 
@@ -85,21 +92,28 @@ extension SpeechViewController {
 }
 
 
-// MARK: Helper
+// MARK: Helpers
 extension SpeechViewController {
     
     func formattedTime(seconds: Int) -> String {
         let hours = seconds / 3600
-        let minutes = (seconds - (hours * 3600)) / 60
-        let seconds = seconds - (hours * 3600) - (minutes * 60)
+        let minutes = (seconds % 3600) / 60
+        let seconds = seconds % 60
         
-        // Doesn't really make sense to show timer, too long of a work out for now
-        return [String(minutes), ":", String(seconds)].joined(separator: " ")
+        let result = String(format: "%02d: %02d: %02d", hours, minutes, seconds)
+        return result
     }
     
     func setUtterance(with text: String) {
         utterance = AVSpeechUtterance(string: text)
         utterance.rate = 0.3  // Range 0.0 - 1.0, default is 0.5
         utterance.pitchMultiplier = 1.5 // [0.5 - 2] Default = 1
+    }
+}
+
+// MARK: Segue handler
+extension SpeechViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
 }
