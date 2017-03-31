@@ -60,8 +60,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O2-Nw-rqi">
-                                <rect key="frame" x="165" y="551" width="44" height="30"/>
-                                <state key="normal" title="voices"/>
+                                <rect key="frame" x="141.5" y="540" width="91" height="30"/>
+                                <state key="normal" title="change voice"/>
                                 <connections>
                                     <segue destination="LUj-di-N9d" kind="show" id="IRh-Hh-zzh"/>
                                 </connections>
@@ -79,7 +79,7 @@
                             <constraint firstItem="GAC-8x-azi" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="RLb-Zj-F9Y"/>
                             <constraint firstItem="3O2-Nw-rqi" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="ZZf-KU-KtP"/>
                             <constraint firstItem="6UU-oL-wW7" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="406" id="Zso-l7-3Xx"/>
-                            <constraint firstItem="3O2-Nw-rqi" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="531" id="iXZ-zh-7YH"/>
+                            <constraint firstItem="3O2-Nw-rqi" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="520" id="iXZ-zh-7YH"/>
                             <constraint firstItem="4Nh-pd-mxb" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="221" id="nsZ-Uw-Ljm"/>
                             <constraint firstItem="4Nh-pd-mxb" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="p5v-A0-4IT"/>
                             <constraint firstItem="GAC-8x-azi" firstAttribute="centerY" secondItem="LVa-UG-knz" secondAttribute="centerY" constant="30" id="u5U-xg-bjt"/>
@@ -128,7 +128,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="r6R-xf-vsl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fA3-bQ-i1v">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fA3-bQ-i1v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
