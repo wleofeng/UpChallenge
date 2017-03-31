@@ -1,9 +1,9 @@
 //
-//  AttributedSpeechViewController.swift
-//  iOS-10-Sampler
+//  LyricParser.swift
+//  UpChallenge
 //
-//  Created by Shuichi Tsutsumi on 9/3/16.
-//  Copyright © 2016 Shuichi Tsutsumi. All rights reserved.
+//  Created by Wo Jun Feng on 3/27/17.
+//  Copyright © 2017 wojunfeng. All rights reserved.
 //
 
 import UIKit

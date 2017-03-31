@@ -1,5 +1,5 @@
 //
-//  Timer.swift
+//  VoiceTimer.swift
 //  UpChallenge
 //
 //  Created by Wo Jun Feng on 3/26/17.
