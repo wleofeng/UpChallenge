@@ -75,7 +75,7 @@ extension SpeechViewController: VoiceTimerDelegate {
 // MARK: Button handler
 extension SpeechViewController {
     
-    @IBAction func speechBtnTapped(sender: UIButton) {
+    @IBAction func speechButtonTapped(_ sender: Any) {
         voiceTimer.startTimer()
         
         if speech.isSpeaking { // handle the speech pause case
@@ -136,6 +136,8 @@ extension SpeechViewController: VoicesTableViewControllerDelegate {
     func didSelectVoice(voicesTableViewController: VoicesTableViewController) {
         voice = voicesTableViewController.selectedVoice
         
-        speech.stopSpeaking(at: .immediate) // stop speaking in order to reset the voice
+//        speech.stopSpeaking(at: .immediate) // stop speaking in order to reset the voice
+        resetButtonTapped(self)
+        speechButtonTapped(self)
     }
 }

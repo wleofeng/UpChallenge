@@ -42,7 +42,7 @@
                                 </constraints>
                                 <state key="normal" image="audio"/>
                                 <connections>
-                                    <action selector="speechBtnTappedWithSender:" destination="dby-Pq-RFa" eventType="touchUpInside" id="dvO-kq-hKp"/>
+                                    <action selector="speechButtonTapped:" destination="dby-Pq-RFa" eventType="touchUpInside" id="NuU-Sq-1IQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UU-oL-wW7">
