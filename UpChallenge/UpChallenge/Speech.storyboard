@@ -22,14 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-Sv-N82" userLabel="Timer Label">
-                                <rect key="frame" x="188" y="132" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-Sv-N82" userLabel="Timer Label">
+                                <rect key="frame" x="125.5" y="188" width="125" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nh-pd-mxb" userLabel="Lyric Label">
-                                <rect key="frame" x="16" y="241" width="343" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lyric" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nh-pd-mxb" userLabel="Lyric Label">
+                                <rect key="frame" x="16" y="280" width="343" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,21 +46,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UU-oL-wW7">
-                                <rect key="frame" x="166" y="426" width="42" height="30"/>
+                                <rect key="frame" x="166" y="411.5" width="42" height="30"/>
                                 <state key="normal" title="pause"/>
                                 <connections>
                                     <action selector="pauseButtonTapped:" destination="dby-Pq-RFa" eventType="touchUpInside" id="mTg-Qq-heX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yr-PT-jc1">
-                                <rect key="frame" x="170" y="486" width="35" height="30"/>
+                                <rect key="frame" x="170" y="457.5" width="35" height="30"/>
                                 <state key="normal" title="reset"/>
                                 <connections>
                                     <action selector="resetButtonTapped:" destination="dby-Pq-RFa" eventType="touchUpInside" id="lt5-3N-S0D"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O2-Nw-rqi">
-                                <rect key="frame" x="141.5" y="540" width="91" height="30"/>
+                                <rect key="frame" x="141.5" y="503.5" width="91" height="30"/>
                                 <state key="normal" title="change voice"/>
                                 <connections>
                                     <segue destination="LUj-di-N9d" kind="show" id="IRh-Hh-zzh"/>
@@ -72,17 +72,17 @@
                             <constraint firstItem="6yr-PT-jc1" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="1Rw-Xm-hCK"/>
                             <constraint firstItem="6UU-oL-wW7" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="2bO-P9-Qvu"/>
                             <constraint firstItem="4Nh-pd-mxb" firstAttribute="leading" secondItem="LVa-UG-knz" secondAttribute="leadingMargin" id="4C1-xy-VJQ"/>
-                            <constraint firstItem="6yr-PT-jc1" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="466" id="5K9-m4-OZi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Nh-pd-mxb" secondAttribute="trailing" id="7IG-re-if4"/>
                             <constraint firstItem="rSc-Sv-N82" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="7vg-GT-ISc"/>
-                            <constraint firstItem="rSc-Sv-N82" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="112" id="Ib8-KT-fbl"/>
+                            <constraint firstItem="6UU-oL-wW7" firstAttribute="top" secondItem="GAC-8x-azi" secondAttribute="bottom" constant="16" id="JOr-T8-87S"/>
                             <constraint firstItem="GAC-8x-azi" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="RLb-Zj-F9Y"/>
                             <constraint firstItem="3O2-Nw-rqi" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="ZZf-KU-KtP"/>
-                            <constraint firstItem="6UU-oL-wW7" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="406" id="Zso-l7-3Xx"/>
-                            <constraint firstItem="3O2-Nw-rqi" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="520" id="iXZ-zh-7YH"/>
-                            <constraint firstItem="4Nh-pd-mxb" firstAttribute="top" secondItem="wC8-le-hn0" secondAttribute="bottom" constant="221" id="nsZ-Uw-Ljm"/>
+                            <constraint firstItem="6yr-PT-jc1" firstAttribute="top" secondItem="6UU-oL-wW7" secondAttribute="bottom" constant="16" id="iAQ-ou-oCN"/>
+                            <constraint firstItem="4Nh-pd-mxb" firstAttribute="bottom" secondItem="GAC-8x-azi" secondAttribute="top" constant="-32" id="ksV-eA-Vm1"/>
+                            <constraint firstItem="rSc-Sv-N82" firstAttribute="bottom" secondItem="4Nh-pd-mxb" secondAttribute="top" constant="-32" id="lSA-wg-DpW"/>
                             <constraint firstItem="4Nh-pd-mxb" firstAttribute="centerX" secondItem="LVa-UG-knz" secondAttribute="centerX" id="p5v-A0-4IT"/>
                             <constraint firstItem="GAC-8x-azi" firstAttribute="centerY" secondItem="LVa-UG-knz" secondAttribute="centerY" constant="30" id="u5U-xg-bjt"/>
+                            <constraint firstItem="3O2-Nw-rqi" firstAttribute="top" secondItem="6yr-PT-jc1" secondAttribute="bottom" constant="16" id="yPu-J8-pyW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="on6-oJ-XWC"/>
