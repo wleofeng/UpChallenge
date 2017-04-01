@@ -12,7 +12,7 @@ The application uses AVSpeechsynthesizer API to dictate workout instructions. Yo
 Workout instructions are configurable, using a JSON payload. 
 
 Example: 
-
+```
 {   "name": "Sally Up", // name of the workout
     "lyrics":[ 
               {
@@ -24,10 +24,10 @@ Example:
               "lyric":"Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground."
               ]
 }
-
+```
 # Why did I build this?
 
-I was inspired by the Sally Up Challenge below. 
+I was inspired by the Sally Up Challenge.
 
 https://www.youtube.com/watch?v=41N6bKO-NVI
 
