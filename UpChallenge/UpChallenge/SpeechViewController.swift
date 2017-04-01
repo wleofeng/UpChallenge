@@ -26,6 +26,10 @@ extension SpeechViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Default text
+        timerLabel.text = "00:00:00"
+        lyriclabel.text = "Press speaker to begin!"
+        
         var voiceToUse: AVSpeechSynthesisVoice?
         for voice in AVSpeechSynthesisVoice.speechVoices() {
             if #available(iOS 9.0, *) {
@@ -98,7 +102,7 @@ extension SpeechViewController {
         let minutes = (seconds % 3600) / 60
         let seconds = seconds % 60
         
-        let result = String(format: "%02d: %02d: %02d", hours, minutes, seconds)
+        let result = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
         return result
     }
     
