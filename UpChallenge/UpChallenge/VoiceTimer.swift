@@ -21,6 +21,7 @@ class VoiceTimer {
     
     fileprivate var lyrics: [Lyric]
     fileprivate var timer: Timer?
+    fileprivate var fileName: String?
 
     weak var delegate: VoiceTimerDelegate?
 
@@ -37,6 +38,8 @@ class VoiceTimer {
     convenience init(fileName: String) {
         let parser = LyricParser(fileName: fileName)
         self.init(seconds: 0, lyrics: parser.lyrics)
+        
+        self.fileName = fileName
     }
     
     convenience init(data: Data) {
@@ -59,6 +62,11 @@ class VoiceTimer {
         delegate?.timerDidUpdate(voiceTimer: self)
         
         stopTimer()
+        
+        // Reload lyrics from file
+        if let fileName = fileName {
+            lyrics = LyricParser(fileName: fileName).lyrics
+        }
     }
     
     func pauseTimer() {
