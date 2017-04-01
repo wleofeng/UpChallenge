@@ -9,9 +9,9 @@ UpChallenge is an iOS application that's built to help you excercise without a g
 
 The application uses `AVSpeechsynthesizer` API to dictate workout instructions. You just need to follow along. 
 
-Workout instructions are configurable, using a JSON payload. 
+Workout instructions are configurable, using a JSON payload. Current this is maintained in the `lyric.json` file.
 
-Example: 
+Payload example: 
 ```
 {  
    "name":"Sally Up",  // name of the workout
@@ -27,6 +27,10 @@ Example:
    ]
 }
 ```
+
+Note - Before opening the project, in command line, make sure to run `pod install`.
+
+
 # Why did I build this?
 
 I was inspired by the Sally Up Challenge.
