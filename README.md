@@ -7,17 +7,17 @@ UpChallenge is an iOS application that's built to help you excercise without a g
 
 # How does it work? 
 
-The application uses AVSpeechsynthesizer API to dictate workout instructions. You just need to follow along. 
+The application uses `AVSpeechsynthesizer` API to dictate workout instructions. You just need to follow along. 
 
 Workout instructions are configurable, using a JSON payload. 
 
 Example: 
 ```
 {  
-   "name":"Sally Up",
+   "name":"Sally Up",  // name of the workout
    "lyrics":[  
       {  
-         "time":1,
+         "time":1, // at timer equals to 1 second, the application will dictate this line of lyric 
          "lyric":"Bring Sally up and bring Sally down. Lift and squat, gotta tear the ground."
       },
       {  
