@@ -43,6 +43,11 @@ class LyricParser {
             commonInit(json: json)
         }
     }
+}
+
+
+// MARK: Internal
+extension LyricParser {
     
     fileprivate func commonInit(json: JSON) {
         if let name = json["name"].string {
@@ -76,5 +81,4 @@ class LyricParser {
         
         return nil
     }
-    
 }

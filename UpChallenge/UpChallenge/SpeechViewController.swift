@@ -26,9 +26,7 @@ extension SpeechViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Default text
-        timerLabel.text = "00:00:00"
-        lyriclabel.text = "Press speaker to begin!"
+        initializeLabels()
         
         var voiceToUse: AVSpeechSynthesisVoice?
         for voice in AVSpeechSynthesisVoice.speechVoices() {
@@ -50,6 +48,12 @@ extension SpeechViewController {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    fileprivate func initializeLabels() {
+        // Default text
+        timerLabel.text = "00:00:00"
+        lyriclabel.text = "Press the speaker to begin!"
+    }
 }
 
 // MARK: VoiceTimerDelegate
@@ -64,7 +68,6 @@ extension SpeechViewController: VoiceTimerDelegate {
     }
     
     func timerDidUpdate(voiceTimer: VoiceTimer) {
-        
         timerLabel.text = formattedTime(seconds: voiceTimer.seconds)
     }
 }
@@ -90,6 +93,8 @@ extension SpeechViewController {
         voiceTimer.resetTimer()
         
         speech.stopSpeaking(at: .immediate)
+        
+        initializeLabels()
     }
 }
 

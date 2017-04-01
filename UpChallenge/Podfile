@@ -6,12 +6,12 @@
   use_frameworks!
 
   # Pods for UpChallenge
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-  pod 'SnapKit', '~> 3.2.0'
-  pod 'Alamofire', '~> 4.4.0'
-  pod 'SwiftyJSON', '~> 3.1.4'
-  pod 'RealmSwift', '~> 2.4.4'
-  pod 'FontAwesome.swift', '~> 1.0.0'
+  # pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  # pod 'SnapKit', '~> 3.2.0'
+  # pod 'Alamofire', '~> 4.4.0'
+   pod 'SwiftyJSON', '~> 3.1.4'
+  # pod 'RealmSwift', '~> 2.4.4'
+  # pod 'FontAwesome.swift', '~> 1.0.0'
   
   target 'UpChallengeTests' do
     inherit! :search_paths

@@ -16,6 +16,5 @@ class Lyric {
     init(time: Int, lyric: String) {
         self.time = time
         self.lyric = lyric
-        
     }
 }

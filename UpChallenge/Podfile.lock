@@ -1,43 +1,12 @@
 PODS:
-  - Alamofire (4.4.0)
-  - ChameleonFramework/Default (2.1.0)
-  - ChameleonFramework/Swift (2.1.0):
-    - ChameleonFramework/Default
-  - FontAwesome.swift (1.0.0)
-  - Realm (2.4.4):
-    - Realm/Headers (= 2.4.4)
-  - Realm/Headers (2.4.4)
-  - RealmSwift (2.4.4):
-    - Realm (= 2.4.4)
-  - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.4.0)
-  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
-  - FontAwesome.swift (~> 1.0.0)
-  - RealmSwift (~> 2.4.4)
-  - SnapKit (~> 3.2.0)
   - SwiftyJSON (~> 3.1.4)
 
-EXTERNAL SOURCES:
-  ChameleonFramework:
-    :git: https://github.com/ViccAlexander/Chameleon.git
-
-CHECKOUT OPTIONS:
-  ChameleonFramework:
-    :commit: dcf98f9bf3a632a7f40679b7da46f09681e48526
-    :git: https://github.com/ViccAlexander/Chameleon.git
-
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  FontAwesome.swift: 2d32a3d62195343c2004b7c9043294ed2948553a
-  Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
-  RealmSwift: 0c02b9f2d4be4301c497ed10e53a0580584eb1dd
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 9e2d85c7ad875402fe7ede5a3859bd977b1ca177
+PODFILE CHECKSUM: ddb2f4242441ae64ff5e6aa9e7722720cd282f4f
 
 COCOAPODS: 1.2.0
