@@ -60,11 +60,10 @@ extension SpeechViewController {
 extension SpeechViewController: VoiceTimerDelegate {
     
     func timeToSpeak(voiceTimer: VoiceTimer) {
-        print("speaking" + voiceTimer.lyric)
-        
-        lyriclabel.text = voiceTimer.lyric
-        setUtterance(with: voiceTimer.lyric)
+        setUtterance(voiceTimer.currentLyric)
         speech.speak(utterance)
+        
+        lyriclabel.text = voiceTimer.currentLyric.lyric
     }
     
     func timerDidUpdate(voiceTimer: VoiceTimer) {
@@ -84,15 +83,13 @@ extension SpeechViewController {
     }
     
     @IBAction func pauseButtonTapped(_ sender: Any) {
-        voiceTimer.pauseTimer()
-        
         speech.pauseSpeaking(at: .immediate)
+        voiceTimer.pauseTimer()
     }
     
     @IBAction func resetButtonTapped(_ sender: Any) {
-        voiceTimer.resetTimer()
-        
         speech.stopSpeaking(at: .immediate)
+        voiceTimer.resetTimer()
         
         initializeLabels()
     }
@@ -111,11 +108,12 @@ extension SpeechViewController {
         return result
     }
     
-    func setUtterance(with text: String) {
-        utterance = AVSpeechUtterance(string: text)
+    func setUtterance(_ lyric: Lyric) {
+        utterance = AVSpeechUtterance(string: lyric.lyric)
+        utterance.rate = lyric.rate
+        utterance.pitchMultiplier = lyric.pitchMultiplier
+        utterance.volume = lyric.volume
         utterance.voice = voice
-        //        utterance.rate = 0.3  // Range 0.0 - 1.0, default is 0.5
-        //        utterance.pitchMultiplier = 1.5 // [0.5 - 2] Default = 1
     }
 }
 

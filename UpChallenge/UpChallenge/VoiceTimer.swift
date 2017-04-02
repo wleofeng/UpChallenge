@@ -15,9 +15,9 @@ protocol VoiceTimerDelegate: class {
 }
 
 class VoiceTimer {
-
-    public fileprivate(set) var lyric: String = ""
-    public fileprivate(set) var seconds: Int
+    
+    public fileprivate(set) var currentLyric: Lyric = Lyric()
+    public fileprivate(set) var seconds: Int = 0
     
     fileprivate var lyrics: [Lyric]
     fileprivate var timer: Timer?
@@ -102,7 +102,7 @@ extension VoiceTimer {
             
             // Time to speak - Timer time equals to the lyric time
             if lyric.time == seconds {
-                self.lyric = lyric.lyric
+                currentLyric = lyric
                 delegate?.timeToSpeak(voiceTimer: self)
                 lyrics.removeFirst()
             }
