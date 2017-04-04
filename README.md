@@ -3,7 +3,7 @@
 
 # What is it?
 
-UpChallenge is an iOS application that's built to help you excercise without a gym trainer. 
+UpChallenge is an iOS application that's built to help you exercise without a gym trainer. 
 
 # How does it work? 
 
